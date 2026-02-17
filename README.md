@@ -34,8 +34,8 @@ The game uses a specialized `game_manager.py` to handle all state transitions. T
 
 ### Key Commands
 
-- **Initialize Game**: `python scripts/game_manager.py init`
 - **Load State**: `python scripts/game_manager.py load`
+- **Reset State**: `python scripts/game_manager.py reset`
 - **Update Location**: `python scripts/game_manager.py set_location "Vogon Hold"`
 - **Add/Remove Items**:
   - `python scripts/game_manager.py add_item "Towel"`
@@ -52,7 +52,7 @@ The game uses a specialized `game_manager.py` to handle all state transitions. T
 
 This project is designed to be used by an AI Agent. The Agent acts as the GM, following the workflow defined in `SKILL.md`:
 
-1.  **Initialize**: Load the save file via `game_manager.py`.
+1.  **Initialize**: Load the save file via `game_manager.py load`.
 2.  **Narrate**: Provide descriptive, witty text based on the user's current location and improbable events.
 3.  **Commit**: Use the atomic CLI commands to save progress after every turn.
 

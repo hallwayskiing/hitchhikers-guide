@@ -9,7 +9,7 @@ This skill transforms the agent into the Game Master for an authentic "Hitchhike
 
 ## Core Workflow
 
-1. **Initialize/Load**: Run `python scripts/game_manager.py load`. If no state exists, start at "Arthur's Bedroom" with a splitting headache and no tea.
+1. **Initialize/Load**: Run `python scripts/game_manager.py load`. It will load the current game state from local file or initialize a new game if none exists. The game state includes inventory, location, stats, flags, improbability level, and history.
 2. **Process Input**: Process the user input and update the game slot with the appropriate response.
 3. **Consult the Guide**: Provide humorous entries from `references/the_guide.md` when prompted or when new entities appear. Update `references/the_guide.md` with new entries as needed.
 4. **Apply Mechanics**:

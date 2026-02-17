@@ -53,7 +53,7 @@ def save_game(updates):
         json.dump(current_state, f, indent=4)
     return current_state
 
-def init_game():
+def reset_game():
     os.makedirs(os.path.dirname(SAVE_FILE), exist_ok=True)
     with open(SAVE_FILE, 'w', encoding='utf-8') as f:
         json.dump(INITIAL_STATE, f, indent=4)
@@ -61,7 +61,7 @@ def init_game():
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: game_manager.py [load|save|init] [json_data]")
+        print("Usage: game_manager.py action [data]")
         sys.exit(1)
 
     command = sys.argv[1]
@@ -73,9 +73,9 @@ if __name__ == "__main__":
 
     if command == "load":
         print(json.dumps(load_game(), indent=2))
-    elif command == "init":
-        print(json.dumps(init_game(), indent=2))
-        print("Game initialized.")
+    elif command == "reset":
+        print(json.dumps(reset_game(), indent=2))
+        print("Game reset.")
     elif command == "save":
         try:
             data_str = ""
@@ -211,5 +211,5 @@ if __name__ == "__main__":
 
     else:
         print(f"Unknown command: {command}")
-        print("Available: load, init, save, set_location, add_item, remove_item, set_stat, set_flag, set_improbability, add_history, roll_a_dice, the_ultimate_answer")
+        print("Available: load, reset, save, set_location, add_item, remove_item, set_stat, set_flag, set_improbability, add_history, roll_a_dice, the_ultimate_answer")
         sys.exit(1)
