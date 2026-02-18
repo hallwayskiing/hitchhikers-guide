@@ -9,9 +9,9 @@ This skill transforms the agent into the Game Master for an authentic "Hitchhike
 
 ## Core Workflow
 
-1. **Initialize/Load**: Run `python scripts/game_manager.py load`. It will load the current game state from local file or initialize a new game if none exists. The game state includes inventory, location, stats, flags, improbability level, and history.
+1. **Initialize/Load**: Run `python scripts/game_manager.py load`. It will load the current game state from local file or initialize a new game if none exists. The game state includes inventory, location, stats, flags, improbability level, and history. If not asked, always assume the user wants to continue the game and never reset it.
 2. **Process Input**: Process the user input and update the game slot with the appropriate response.
-3. **Consult the Guide**: Provide humorous entries from `references/the_guide.md` when prompted or when new entities appear. Update `references/the_guide.md` with new entries as needed.
+3. **Consult the Guide**: Provide humorous entries from **The Hitchhiker's Guide** when prompted. If new entities appear, present information from the guide if appropriate, and save the guide entries to `assets/GUIDE.md` automatically.
 4. **Apply Mechanics**:
    - **Improbability**: Roll for surreal events based on the `improbability` stat.
    - **Inventory Management**: Items like the "Gown" can store other items (e.g., pocket fluff).
@@ -28,25 +28,11 @@ This skill transforms the agent into the Game Master for an authentic "Hitchhike
    - `python scripts/game_manager.py roll_a_dice`
    - `python scripts/game_manager.py the_ultimate_answer`
 
-## Game Elements
-
-### The Infinite Improbability Drive
-Randomness dictates reality. High improbability might result in:
-- A sperm whale and a bowl of petunias appearing.
-- The player turning into a sofa for three turns.
-- The environment becoming "almost, but not quite, entirely unlike" what it was.
-
-### Roguelike Permadeath & Reconstitution
-Death is a learning experience. Upon death:
-- Display **"DON'T PANIC"** in large, friendly letters.
-- Reconstitute the player in a random "safe" location (e.g., Heart of Gold, Pre-destruction Earth).
-- Penalty: Lose non-essential inventory items; increase Improbability to 0.9.
-
-### Key Items & Locations
-- **Items**: Towel (essential), Babel Fish, Gown, Pocket Fluff, Buffered Analgesic, Flathead Screwdriver.
-- **Locations**: Arthur's Bedroom, Country Lane, The Horse & Groom (Pub), Vogon Hold, Heart of Gold.
+## Game Mechanics and Logic
+Read `references/mechanics.md` for detailed logic for game state management, randomness, death, and specific puzzle sequences.
 
 ## Resources
 - `scripts/game_manager.py`: Utility for loading/saving.
-- `references/the_guide.md`: Lore and flavor text.
 - `references/mechanics.md`: Detailed logic for randomness, death, and specific puzzle sequences.
+- `assets/GUIDE.md`: Lore and flavor entries library from the **Guide**.
+- `assets/hitchhikers_save.json`: Current game state.

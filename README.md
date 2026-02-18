@@ -10,20 +10,20 @@ An AI-powered text adventure game engine inspired by the 1984 Infocom classic an
 
 - **Dynamic AI Narrator**: Experience a unique story every time, delivered in the dry, British, and absurdist style of Douglas Adams.
 - **Infinite Improbability Drive**: A core mechanic where reality itself can shift. High improbability might result in you becoming a sofa or a sperm whale appearing in mid-air.
-- **The Guide**: A built-in lore system (`references/the_guide.md`) that the GM consults to provide helpful (or entirely useless) information.
 - **Atomic State Management**: Robust CLI tools to ensure game saves are consistent and error-free.
 - **Roguelike Reconstitution**: Death isn't the end; it's a learning experience. Just remember: DON'T PANIC.
+- **Persistency**: The game state is saved locally and can be reloaded anytime. The **Guide** entries are persistent and can be updated and expanded upon.
 
 ## 📂 Project Structure
 
 ```text
 .
 ├── assets/
-│   └── hitchhikers_save.json   # Current game state (ignored by git)
+│   └── hitchhikers_save.json   # Current game state
+│   └── GUIDE.md                # Lore and flavor entries library from the Guide
 ├── scripts/
 │   └── game_manager.py         # core CLI logic for state management
 ├── references/
-│   ├── the_guide.md            # Lore and flavor text entries
 │   └── mechanics.md            # Puzzle logic and game rules
 └── SKILL.md                    # Agent instructions and core workflow
 ```
